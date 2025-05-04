@@ -1,5 +1,5 @@
-const cardsEnJuego = document.querySelector("#cards-Enjuego");
-const cardsRobar = document.querySelector("#cards-robar");
+// const cardsEnJuego = document.querySelector("#cards-Enjuego");
+// const cardsRobar = document.querySelector("#cards-robar");
 const defaultPlayerCount = 4;
 const handSize = 7;
 const deckSetUp = {
@@ -39,10 +39,10 @@ function shuffleDeck(deck) {
     }
     return deck;
 }
-function updateGameDisplay(card) {
-    cardsEnJuego.innerHTML = `<div class="card-slot-Enjuego">
-    <img src="${card.image}" alt="${card.name}" class="img-fluid"></div>`;
-}
+// function updateGameDisplay(card) {
+//     cardsEnJuego.innerHTML = `<div class="card-slot-Enjuego">
+//     <img src="${card.image}" alt="${card.name}" class="img-fluid"></div>`;
+// }
 cardsRobar.addEventListener("click", function () {
     if (deck.length > 0) {
         const drawnCard = deck.pop();
@@ -158,28 +158,28 @@ function isDrawPileEmpty(state) {
 function hasCardsInHand(state, playerId) {
     return state.players[playerId].hand.length > 0;
 }
-function updatePlayerHand(playerId, playerHand) {
-    const playerElement = document.getElementById(`player-${playerId}`);
-    playerElement.innerHTML = '';
-    playerHand.forEach(card => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('card-slot-user');
-        const img = document.createElement('img');
-        img.src = `images/${card.color}-${card.value}.svg`;
-        img.alt = `${card.color} ${card.value}`;
-        cardElement.appendChild(img);
-        playerElement.appendChild(cardElement);
-    });
-}
-function renderInitialCards() {
-    const gameState = startGame(shuffleDeck(getDeckCards()));
-    gameState.players.forEach((player, index) => {
-        updatePlayerHand(index, player.hand);
-    });
-    const topCard = getTopCard(gameState.discardPile);
-    updateGameDisplay(topCard);
-}
-renderInitialCards();
+// function updatePlayerHand(playerId, playerHand) {
+//     const playerElement = document.getElementById(`player-${playerId}`);
+//     playerElement.innerHTML = '';
+//     playerHand.forEach(card => {
+//         const cardElement = document.createElement('div');
+//         cardElement.classList.add('card-slot-user');
+//         const img = document.createElement('img');
+//         img.src = `images/${card.color}-${card.value}.svg`;
+//         img.alt = `${card.color} ${card.value}`;
+//         cardElement.appendChild(img);
+//         playerElement.appendChild(cardElement);
+//     });
+// }
+// function renderInitialCards() {
+//     const gameState = startGame(shuffleDeck(getDeckCards()));
+//     gameState.players.forEach((player, index) => {
+//         updatePlayerHand(index, player.hand);
+//     });
+//     const topCard = getTopCard(gameState.discardPile);
+//     updateGameDisplay(topCard);
+// }
+// renderInitialCards();
 
 
 
