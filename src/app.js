@@ -43,14 +43,14 @@ function shuffleDeck(deck) {
 //     cardsEnJuego.innerHTML = `<div class="card-slot-Enjuego">
 //     <img src="${card.image}" alt="${card.name}" class="img-fluid"></div>`;
 // }
-cardsRobar.addEventListener("click", function () {
-    if (deck.length > 0) {
-        const drawnCard = deck.pop();
-        playerHand.push(drawnCard);
-        alert("Carta robada: " + drawnCard.name);
-        updateGameDisplay(drawnCard);
-    }
-});
+// cardsRobar.addEventListener("click", function () {
+//     if (deck.length > 0) {
+//         const drawnCard = deck.pop();
+//         playerHand.push(drawnCard);
+//         alert("Carta robada: " + drawnCard.name);
+//         updateGameDisplay(drawnCard);
+//     }
+// });
 function createPlayer(type, deck, handSize = 7) {
     const hand = [];
     for (let i = 0; i < handSize; i++) {
